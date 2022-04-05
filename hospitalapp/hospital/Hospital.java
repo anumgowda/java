@@ -27,7 +27,7 @@ public class Hospital {
 		return patientAddeded;
 	}
 
-	public void getpatientDetails() {
+	public void getPatientDetails() {
 		System.out.println("inside getpatientDetails()....fecting the data");
 		for (int i = 0; i < patient.length; i++) {
 			System.out.println(patient[i]);
@@ -35,7 +35,9 @@ public class Hospital {
 		System.out.println("end of getPatientDetails()");
 	}
 
-	public void getPatientByname(String name) {
+	public PatientDTO getPatientByName(String name) {
+		PatientDTO pname = null;
+
 		System.out.println("getpatientId() method is started");
 		for (int i = 0; i < patient.length; i++) {
 			if (patient[i].getPatientName() == name) {
@@ -44,10 +46,12 @@ public class Hospital {
 				System.out.println("no patient name match");
 			}
 		}
-
+		return pname;
 	}
 
-	public int getPatientById(int id) {
+	public PatientDTO getPatientById(int id) {
+
+		PatientDTO pid = null;
 		System.out.println("inside getPatientById()");
 		System.out.println("args 1 patient Id:" + id);
 		for (int i = 0; i < patient.length; i++) {
@@ -58,33 +62,35 @@ public class Hospital {
 
 			}
 		}
-		return id;
+		return pid;
 	}
 
-	
-	public long getPatientPhoneno(long phoneno) {
+	public PatientDTO getPatientByPhoneno(long phoneno) {
+		PatientDTO dto = null;
 		System.out.println("inside getPatientPhoneno()");
-		for(int i=0;i<patient.length;i++) {
-			if(patient[i].getPhoneNumber()==phoneno) {
-				System.out.println(patient[i].getPhoneNumber());
-				}
-			else {
+		for (int i = 0; i < patient.length; i++) {
+			if (patient[i].getPhoneNumber() == phoneno) {
+				System.out.println(patient[i]);
+			} else {
 				System.out.println("the given patient phonenumber is not available");
-				
-			}}
-		return phoneno;
+
+			}
+		}
+		return dto;
 	}
-	public int getPatientage(int age) {
+
+	public PatientDTO getPatientage(int age) {
+		PatientDTO dto = null;
 		System.out.println("inside getPatientById()");
-		for(int i=0;i<patient.length;i++) {
-			if(patient[i].getage()==age) {
+		for (int i = 0; i < patient.length; i++) {
+			if (patient[i].getage() == age) {
 				System.out.println(patient[i].getage());
-				}
-			else {
+			} else {
 				System.out.println("the given patient age is not available");
-				
-			}}
-		return age;
+
+			}
+		}
+		return dto;
 	}
 
 	public boolean updateContactNumberByPatientName(long PhoneNumber, String patientname) {
@@ -107,29 +113,36 @@ public class Hospital {
 
 	public String getPatientAddressByName(String pname) {
 		System.out.println("inside getpatientidbyname()");
+		String address = "";
 		for (int i = 0; i < patient.length; i++) {
 			if (patient[i].getPatientName().equals(pname)) {
-				System.out.println("patient name:"+patient[i].getPatientName()+","+"patient address:"+patient[i].getaddress());
+				System.out.println("patient name:" + patient[i].getPatientName() + "," + "patient address:"
+						+ patient[i].getaddress());
 			} else {
 				System.out.println("patient name is not available");
 			}
 		}
 
-			return pname;
+		return address;
+
 	}
-	public String getGenderByName(String pname) {
+
+	public PatientDTO getGenderByName(String pname) {
+
+		PatientDTO gender = null;
 		System.out.println("inside getgenderbyname()");
 		for (int i = 0; i < patient.length; i++) {
 			if (patient[i].getPatientName().equals(pname)) {
-				System.out.println("patient name:"+patient[i].getPatientName()+","+"patient address:"+patient[i].getgender());
+				System.out.println("patient name:" + patient[i].getPatientName() + "," + "patient address:"
+						+ patient[i].getGender());
 			} else {
 				System.out.println("patient name is not available");
 			}
 		}
 
-			return pname;
+		return gender;
 	}
-	
+
 	public void gettingPatientIdByName(String name, int patientId) {
 		System.out.println("invoking method()");
 		System.out.println("1st args:patientname:" + name);
@@ -145,4 +158,17 @@ public class Hospital {
 
 	}
 
+	public boolean deletePatientById(int patientId) {
+		boolean delete = false;
+		for (int i = 0; i < patient.length; i++) {
+			if (patient[i].getPatientId() == patientId) {
+				patient[i] = null;
+				System.out.println("patient details deleted successfully...");
+				return true;
+			} else {
+				System.out.println("patient not found  with this id");
+			}
+			return delete;
+		}
+	}
 }

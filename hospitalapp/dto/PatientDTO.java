@@ -25,11 +25,11 @@ public class PatientDTO {
 	public void setPatientName(String PatientName) {
 		this.patientName=PatientName;
 		}
-	public Gender getgender() {
+	public Gender getGender() {
 		return gender;
 	}
-	public void setgender(Gender string) {
-		this.gender=string;
+	public void setGender(Gender Gender) {
+		this.gender=Gender;
 		}
 	public String getaddress() {
 		return address;
