@@ -1,0 +1,179 @@
+1)How can u create constants in java?
+by using static final keyword,
+Syntax:final keyword datatype identifier_name = constant; 
+   
+
+2)how many datatypes are there in java?
+   There are two types of datatypes 
+*primitive
+*non-primitive
+
+3)why Is specifing datatype mandatory in java
+   Java is a strongly typed language. This means that all operations are type-checked by the compiler for type compatibility. Illegal operations will not be compiled. Thus, strong type checking helps prevent errors and enhances reliability.
+
+
+
+4)what are  some common naming convertions for java variables?
+  * All identifiers should begin with a letter (A to Z or a to z), currency character ($) or an underscore 
+   *After the first character, identifiers can have any combination of characters.
+   * A keyword cannot be used as an identifier.
+
+
+
+5)what is variable initialization how it is difference than assignment?
+initialization: to initialize a variable. It can be done at the time of declaration.
+ assignment: to assign value to a variable. It can be done anywhere, only once with the final-identifier.
+
+
+6)what is array?
+   Array is container which stores the similar type of data/elements.
+
+7)can u pass the negative number in array size?
+  NO
+
+
+8)where does array stored in JVM memory?
+Heap area
+
+9)what are the advantage of array?
+1) Array stores data elements of the same data type.
+ 2) Maintains multiple variable names using a single name.
+ Arrays help to maintain large data under a single variable name.
+ This avoid the confusion of using multiple variables.
+
+10)what is anonomous array in java ? give example
+   An array in Java without any name is known as an anonymous array.
+ It is an array just for creating and using instantly. Using an anonymous .
+
+11)write a program to print elements of array
+    public class Array {
+public static void main(String[] args) {
+int [] arr = new int [] {1, 2, 3, 4, 5};
+System.out.println("Elements of given array: ");
+for (int i = 0; i < arr.length; i++) {
+System.out.print(arr[i]);
+
+
+12)   write a program to sort an array in java?
+      public class SortArray  
+{   
+public static void main(String[] args)   
+{    
+int [] array = new int [] {90, 23, 5, 109, 12, 22, 67, 34};  
+Arrays.sort(array);   
+System.out.println("Elements of array sorted in ascending order: ");    
+for (int i = 0; i < array.length; i++)   
+{       
+System.out.println(array[i]);   
+}   
+}  
+}  
+  13)write a program to check whether the two given array are equal,given both contains same datatype and same length?
+  
+  
+import java.util.Arrays;
+  
+public class CheckArraysEqual {
+    public static void main(String[] args)
+    {
+        int a[] = { 30, 25, 40, 23 };
+  
+        int b[] = { 30, 26, 40, 78 };
+        Arrays.equals(a, b);
+        boolean result = Arrays.equals(a, b);
+        if (result == true) {
+            System.out.println("Two arrays are equal");
+        }
+        else {
+            System.out.println("Two arrays are not equal");
+        }
+    }
+}
+
+
+14)write a program to throw ArrayOutOfBoundEXception?
+     		public class Exception {
+    public static void main(String[] args)
+    {
+        int ar[] = { 1, 2, 3, 4, 5 };
+        for (int i = 0; i <= ar.length; i++)
+            System.out.println(ar[i]);
+    }
+}
+      
+  15) what will happen if you do not initialize an array?  
+If you don't initialize the numbers in your array, they can be anything.
+ Using this instead saves you having to loop over the array and assign every value to 0 . If you decide to insert other numbers, then initializing the array won't be needed.
+
+
+
+ 16)find the smallest and largest elements in an array?
+     public class FindLargestSmallestNumberMain {
+ 
+ public static void main(String[] args) {
+ 
+ int arr[] = new int[]{12,56,76,89,100,343,21,234};
+ 
+ int smallest = arr[0];
+ int largest = arr[0];
+ 
+ for(int i=1; i< arr.length; i++)
+ {
+ if(arr[i] > largest)
+ largest = arr[i];
+ else if (arr[i] < smallest)
+ smallest = arr[i];
+ 
+ }
+ System.out.println("Smallest Number is : " + smallest);
+ System.out.println("Largest Number is : " + largest); 
+ }
+}
+ 
+17)what is static keywoprd,static variable,static method in java?
+    the keyword static means that the particular member belongs to a type itself, rather than to an instance of that type. 
+    the variable which is declared inside the class and outside the method with static keyword.
+   the method which is declared inside the class and outside the method with static keyword.
+
+
+18)can we Overload and Override static method in java?
+   we can overload static method,but we cannot override static method. 
+
+19)why main method is declared as static?
+ JVM can load the class into the main memory. The main() method is the entry point of each and every Java program.
+ The main() method is required because the compiler starts executing a program from this entry point.
+
+20)what is static block?
+    It is  special block, called a static block (also called static clause) that can be used for static initialization of a class. 
+This code inside the static block is executed only once: the first time the class is loaded into memory.
+
+21)can constructor be static in java?
+   NO
+
+22)can interface in java have a static methos in it?
+NO
+
+23)what is constructor chining?
+   Constructor Chaining is the process of calling one constructor of a class from another constructor of the same class or another class using the current object of the class.   
+
+
+24)what is constructor?
+     constructor is a special method ,which takes the same name as class name and it does not have return type.
+
+25)what happens if we keeps a return type to a constructor?
+    If you keep a return of a constructor then that will be treated as a normal method and it will not execute while creating an object of the class.
+
+26)can we call subclass constructor from super class constructor?
+   No, we cannot call subclass constructor from superclass constructor
+
+27)how can u create a instance of child class with parent class?
+   By using the reference variable of the Parent class is capable to hold its object reference as well as its child object reference.
+
+28)difference between  instance and class?
+   A class is a blueprint which you use to create objects. An object is an instance of a class 
+
+29)how many ways instance can be created?
+ two ways
+
+30)what happes if u create a instance of a class?
+   "instantiating" a class.
